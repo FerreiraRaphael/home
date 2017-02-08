@@ -1,0 +1,104 @@
+-----------------------------------------------------------------------------
+************************ Hooli GTK, Shell & GDM theme ***********************
+-----------------------------------------------------------------------------
+
+Version : Final
+
+Created by Umayanga Sandeepa
+
+-------------------------- What's New ---------------------------
+
+* GNOME 3.22 COMPATIBLE
+
+* Transparent top bar.
+
+* Transparent headerbars/titlebas
+
+
+
+* This transparent theme is only avaibale for GNOME 3.20 & GNOME 3.22
+
+
+_________________________________________________________________
+
+
+* New menu icon for "Activities" button on the top pannel.
+
+* Based on the glorious theme "Adapta" and Cloak-3.20 theme.
+
+
+____________________________________________________
+
+---------------- Install GDM Theme -----------------
+____________________________________________________
+
+GDM (Lock/Login Screen)
+
+To change the GDM theme, you need to rewrite a system file.
+Please be careful because if it fails, desktop environment may not operate correctly.
+
+  Notes:
+        Not supported for GNOME 3.14, sorry.
+        When applying this, other shell themes might look broken.
+
+Install
+
+    * Backup an existing .gresource file. (Skip this step when you just update it.)
+
+    sudo cp /usr/share/gnome-shell/gnome-shell-theme.gresource /usr/share/gnome-shell/gnome-shell-theme.gresource~
+
+    * Replace with the new one.
+
+       *** If you put this theme in /usr/share/themes:
+
+        sudo cp /usr/share/themes/Hooli/gnome-shell/gnome-shell-theme.gresource /usr/share/gnome-shell
+
+       *** If you put this theme in ~/.themes:
+
+        sudo cp ~/.themes/Hooli/gnome-shell/gnome-shell-theme.gresource /usr/share/gnome-shell
+
+    Restart GNOME Shell (press Alt+F2, then type r).
+
+Uninstall
+
+    * Restore to original theme from the backup.
+
+    sudo mv -f /usr/share/gnome-shell/gnome-shell-theme.gresource~ /usr/share/gnome-shell/gnome-shell-theme.gresource
+
+    Restart GNOME Shell (press Alt+F2, then type r).
+
+_______________________________________________________________
+
+
+Recommended icon theme
+* Paper
+
+
+
+------------------------------------------------------------------------------
+GTK+ theme and Shell theme based on Adapta theme	
+* Creator of the Adapta theme - tista500					
+
+Adapta theme based on Flat-Plat theme
+* Creator of the Flat-Plat theme - nana-4
+------------------------------------------------------------------------------
+
+
+
+Special thanks:
+
+* tista500 , the developer of the Adapta theme.
+* nana-4 , the developer of the Flat-Plat theme.
+* LinxGem33 , Developer of the Flat-Adapta-OSX theme and many amazing themes.
+* Charliehenson , One of my best friend in my linux life, Wallpaper designer and a former YouTube reviewer.
+
+
+Thank you everyone who downloaded this theme, up/down voted, commented and supported me. Thank you sooooo much <3 
+
+
+
+NB :
+
+"hooli" name is given by the name of a company in HBO's "Silicon Valley" American teledrama. I think "hooli" name is owned by HBO (Home Box Office).
+
+New hooli logo is created by modifying "Rotrorica" icons theme for Android.

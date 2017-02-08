@@ -1,0 +1,135 @@
+----------------------------------------------------------------------
+                    Ashes GTK+ & Shell Theme                    
+----------------------------------------------------------------------
+
+
+Version: 1.2 
+Developer: Umayanga Sandeepa
+
+
+Merry Christmas and Happy New Year
+
+
+---------- What's new ?
+
+
+* Shell theme is based on  tista500's Adapta theeme with with pink and blue color scheme and gray search entity.
+
+* Some modifications in GTK+ theme. 
+
+* Added a white - pinc sidebar.
+
+* Introduced a dark titlebar version. (Turn on Global DArk theme)
+
+
+
+Wallpapers are included in the downloadabal rar file.
+
+
+---------- Supported desktop environments 
+
+* GNOME 3.22
+* GNOME 3.20
+* GNOME 3.18
+* Unity 7.5 (Ubuntu 16.10)
+* Unity 7.4 (Ubuntu 16.04 LTS) 
+
+
+
+
+This version is tested only in GNOME 3.22.2 on Fedora 25.
+Previous versions are tested on GNOME 3.20 , 3.18 and Unity 7.4 (Ubuntu 16.04 LTS)
+
+BUT NEVER TESTED this theme on Ubuntu 16.10
+
+
+Please comment issues & suggestions
+
+
+
+  
+* GTK+ theme is based on Flat-Plat theme.
+* Shell theme is based on Adapta theme.
+
+
+
+
+
+--------- Installation:
+
+Extract it and copy "Ashes" folder to the theme directory.
+    
+    For system-wide installation to /usr/share/themes
+    For user-specific installation to ~/.themes
+
+Use gnome-tweak-tool to change the theme.
+
+
+
+------- Enable DARK titlebars/headerbars 
+
+Turn on (enable) "Global Dark Theme" using Gnome-tweak-tool.
+(Look at the mouse sursor in last screenshot)
+
+Then logout and login to take effect.
+
+
+*** Turn off Global Dark Theme, then logout and login to come back to white color title bars.
+
+
+
+---------- Install GDM (Lock/Login Screen) theme
+
+
+
+To change the GDM theme, you need to rewrite a system file.
+Please be careful because if it fails, desktop environment may not operate correctly.
+
+Notes:
+Not supported for GNOME 3.14, sorry.
+When applying this, other shell themes might look broken.
+
+Install
+
+* Backup an existing .gresource file. (Skip this step when you just update it.)
+
+sudo cp /usr/share/gnome-shell/gnome-shell-theme.gresource /usr/share/gnome-shell/gnome-shell-theme.gresource~
+
+* Replace with the new one.
+
+*** If you put this theme in /usr/share/themes:
+
+sudo cp /usr/share/themes/Ashes/gnome-shell/gnome-shell-theme.gresource /usr/share/gnome-shell
+
+*** If you put this theme in ~/.themes:
+
+sudo cp ~/.themes/Ashes/gnome-shell/gnome-shell-theme.gresource /usr/share/gnome-shell
+
+Restart GNOME Shell (press Alt+F2, then type r).
+
+Uninstall
+
+* Restore to original theme from the backup.
+
+sudo mv -f /usr/share/gnome-shell/gnome-shell-theme.gresource~ /usr/share/gnome-shell/gnome-shell-theme.gresource
+
+Restart GNOME Shell (press Alt+F2, then type r).
+
+
+
+
+
+
+Special thanks to
+
+nana-4, the developer of Flat-Plat.
+https://github.com/nana-4/Flat-Plat
+
+tista500, the developer of Adapta.
+https://github.com/tista500/Adapta
+
+
+
+Thanks.
+
+
