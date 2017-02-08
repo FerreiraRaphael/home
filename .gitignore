@@ -6,3 +6,8 @@
 /*/
 !/.themes/
 !/.icons/
+!/.local/
+/.local/*
+!/.local/share/
+/.local/share/*
+!/.local/share/icons/
