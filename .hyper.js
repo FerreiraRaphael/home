@@ -61,10 +61,6 @@ module.exports = {
       lightCyan: '#00ffff',
       lightWhite: '#ffffff'
     },
-    hyperBorder: {
-      borderColors: ['#fc1da7', '#fba506'],
-      borderWidth: '2px'
-    },
     // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
     // if left empty, your system's login shell will be used by default
     shell: '',
@@ -82,12 +78,24 @@ module.exports = {
     bell: 'SOUND',
 
     // if true, selected text will automatically be copied to the clipboard
-    copyOnSelect: false
+    copyOnSelect: false,
 
     // URL to custom bell
     // bellSoundURL: 'http://example.com/bell.mp3',
 
     // for advanced config flags please refer to https://hyper.is/#cfg
+
+    //PLUGINS CONFIGS
+    hyperBorder: {
+      borderColors: ['#fc1da7', '#fba506'],
+      borderWidth: '2px'
+    },
+    visor: {
+      hotkey: 'CommandOrControl+Shift+Z',
+      position: 'top', // top or left, right, bottom
+      width: 800, // Optional, defaults to half of viewable area for horizontal positions, 100% for vertical
+      height: 600 // Optional, defaults to half of viewable area for vertical positions, 100% for horizontal
+    }
   },
 
   // a list of plugins to fetch and install from npm
@@ -100,7 +108,12 @@ module.exports = {
   	'hyperterm-atom-dark',
 	  'hyperborder',
 	  'hyperterm-alternatescroll',
-	  'hyper-blink'
+	  'hyper-blink',
+    'hyperterm-visor',
+    'hyperterm-paste',
+    'hyperterm-tabs',
+    'hyperline',
+    'hyper-statusline'
   ],
 
   // in development, you can create a directory under
