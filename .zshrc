@@ -3,8 +3,10 @@
 
 # Path to your oh-my-zsh installation.
   export ZSH=/home/raphael/.oh-my-zsh
-
-# Set name of the theme to load. Optionally, if you set this to "random"
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+  export PATH="$PATH:./node_modules/.bin"
+ #Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="robbyrussell"
@@ -83,30 +85,45 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#startup
-trap "source ~/.zshrc && rehash" USR1
+alias instalar="sudo apt-get install -y"
 
 #functions
 
-#aliases
-alias szsh="source ~/.zshrc && rehash"
-alias extract="tar -xvzf"
+#!/bin/bash
+# function Extract for common file formats
 
-alias pdm-api="cd '$PROJECTS_DIR/pertim-de-mim-api'"
-alias pdm-front="cd '$PROJECTS_DIR/pertim-de-mim-frontend'"
-alias recs="cd '$PROJECTS_DIR/recs'"
-#rvm
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
-
-#Vars
-
-export PATH="$PATH:$HOME/.rvm/bin"
-
-export QMAKE=/usr/bin/qmake-qt5
-
-export NVM_DIR="/home/raphael/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
-#Work
-export PROJECTS_DIR="/home/raphael/Code"
-
+function extract {
+ if [ -z "$1" ]; then
+    # display usage if no parameters given
+    echo "Usage: extract <path/file_name>.<zip|rar|bz2|gz|tar|tbz2|tgz|Z|7z|xz|ex|tar.bz2|tar.gz|tar.xz>"
+    echo "       extract <path/file_name_1.ext> [path/file_name_2.ext] [path/file_name_3.ext]"
+    return 1
+ else
+    for n in $@
+    do
+      if [ -f "$n" ] ; then
+          case "${n%,}" in
+            *.tar.bz2|*.tar.gz|*.tar.xz|*.tbz2|*.tgz|*.txz|*.tar) 
+                         tar -vzxf "$n"       ;;
+            *.lzma)      unlzma ./"$n"      ;;
+            *.bz2)       bunzip2 ./"$n"     ;;
+            *.rar)       unrar x -ad ./"$n" ;;
+            *.gz)        gunzip ./"$n"      ;;
+            *.zip)       unzip ./"$n"       ;;
+            *.z)         uncompress ./"$n"  ;;
+            *.7z|*.arj|*.cab|*.chm|*.deb|*.dmg|*.iso|*.lzh|*.msi|*.rpm|*.udf|*.wim|*.xar)
+                         7z x ./"$n"        ;;
+            *.xz)        unxz ./"$n"        ;;
+            *.exe)       cabextract ./"$n"  ;;
+            *)
+                         echo "extract: '$n' - unknown archive method"
+                         return 1
+                         ;;
+          esac
+      else
+          echo "'$n' - file does not exist"
+          return 1
+      fi
+    done
+fi
+}

@@ -1,13 +1,16 @@
 /*
 !.zshrc
-!.hyper.js
 !.gitignore
 !README.md
 /*/
 !/.themes/
 !/.icons/
+/.icons/default/
 !/.local/
 /.local/*
 !/.local/share/
 /.local/share/*
 !/.local/share/icons/
+/.local/share/icons/hicolor/
+/.local/share/icons/hicolor.bak/
+
