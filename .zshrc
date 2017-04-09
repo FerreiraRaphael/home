@@ -92,6 +92,24 @@ alias instalar="sudo apt-get install -y"
 #!/bin/bash
 # function Extract for common file formats
 
+function backupdeb {
+	sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
+}
+
+function restoredeb {
+	sudo mv /etc/apt/sources.list.bak /etc/apt/sources.list
+}
+
+function adddeb {
+  backupdeb
+	if [ $# -eq 0 ]
+		then
+			echo "Sem argumentos"
+	else
+		echo "deb $*" | sudo tee -a /etc/apt/sources.list 
+	fi
+}
+
 function extract {
  if [ -z "$1" ]; then
     # display usage if no parameters given
